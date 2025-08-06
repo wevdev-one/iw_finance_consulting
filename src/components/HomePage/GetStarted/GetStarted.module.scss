@@ -1,0 +1,133 @@
+@import "../../../styles//variables";
+
+.wrap {
+  position: relative;
+  width: 100%;
+
+  .title {
+    text-align: left;
+  }
+
+  .text {
+    font-weight: 300;
+  }
+
+  .item {
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(205, 215, 202, 0.50) 11.87%, rgba(174, 178, 172, 0.50) 89.46%);
+    padding: 30px 20px 6px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &Title {
+      border-radius: 10px;
+      border: 1px solid #253428;
+      padding: 10px;
+      width: fit-content;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    transform: rotate(-45deg);
+  }
+
+  .index {
+    color: #6D8572;
+  }
+
+  @media screen and (min-width: $land-768) {
+    padding: 80px 0;
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+      gap: 30px 20px;
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+    }
+
+    .item {
+      gap: 40px;
+    }
+
+    .index {
+      font-size: 170px;
+      line-height: 100%;
+      margin-top: auto;
+    }
+
+    .icon {
+      bottom: 20px;
+    }
+  }
+  
+  @media screen and (max-width: $land-767) {
+    padding: 45px 0;
+
+    .mart {
+      margin-top: 35px;
+    }
+
+    .slider {
+      &Wrap {
+        width: 100%;
+        margin-top: 20px;
+      }
+      &Btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        position: relative;
+        z-index: 99;
+        margin-top: 25px;
+      }
+
+      &Btn {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background-color: $colored;
+
+        img {
+          width: 12px;
+          height: 100%;
+        }
+
+        &.sliderBtnPrev {
+          transform: rotate(-180deg);
+        }
+
+        &.inactive {
+          opacity: 0.5;
+        }
+      }
+
+      &Item {
+        border-radius: 10px;
+        background: #E5F0F3;
+        padding: 0 30px;
+      }
+    }
+
+    .item {
+      gap: 35px;
+    }
+
+    .icon {
+      top: 32px;
+    }
+
+    .index {
+      font-size: 130px;
+    }
+  }
+}

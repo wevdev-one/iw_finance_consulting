@@ -1,0 +1,118 @@
+@import './_variables';
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('../assets/fonts/Avenir-Black.woff2') format('woff2'),
+       url('../assets/fonts/Avenir-Black.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('../assets/fonts/Avenir-Medium.woff2') format('woff2'),
+       url('../assets/fonts/Avenir-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('../assets/fonts/Avenir-Roman.woff2') format('woff2'),
+       url('../assets/fonts/Avenir-Roman.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('../assets/fonts/Avenir-Light.woff2') format('woff2'),
+       url('../assets/fonts/Avenir-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-92-38 {
+    font-size: 92px;
+    line-height: 130%;
+}
+
+.font-60-38 {
+    font-size: 60px;
+    line-height: 130%;
+}
+
+.font-48-28 {
+    font-size: 48px;
+    line-height: 130%;
+}
+
+.font-38-28 {
+    font-size: 38px;
+    line-height: 130%;
+}
+
+.font-34-20 {
+    font-size: 34px;
+    line-height: 130%;
+}
+
+.font-23-18 {
+    font-size: 23px;
+    line-height: 130%;
+}
+
+.font-22-16 {
+    font-size: 22px;
+    line-height: 130%;
+}
+
+.font-21-16, .font-21 {
+    font-size: 21px;
+    line-height: 130%;
+}
+
+.font-16-14 {
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.font-14, .font-14-12, .font-14-13 {
+    font-size: 14px;
+    line-height: 150%;
+}
+
+@media screen and (max-width: $land-767) {
+
+    .font-92-38, .font-60-38 {
+        font-size: 38px;
+    }
+
+    .font-48-28, .font-38-28 {
+        font-size: 28px;
+    }
+
+    .font-34-20 {
+        font-size: 20px;
+    }
+
+    .font-23-18 {
+        font-size: 18px;
+    }
+
+    .font-22-16, .font-21-16 {
+        font-size: 16px;
+    }
+
+    .font-16-14 {
+        font-size: 14px;
+    }
+
+    .font-16-12, .font-14-12 {
+        font-size: 12px;
+    }
+}
