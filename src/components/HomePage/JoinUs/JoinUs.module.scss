@@ -1,4 +1,4 @@
-@import "../../../styles//variables";
+@import "../../../styles/variables";
 
 .wrap {
   position: relative;
@@ -17,6 +17,8 @@
     height: auto;
     animation: spin 5s linear infinite;
     transform-origin: center center;
+    border-radius: 40%;
+    overflow: hidden;
   }
 
   .center {
@@ -27,8 +29,7 @@
     padding: 80px 0;
 
     .container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
     }
 
     .center {
@@ -36,38 +37,34 @@
     }
 
     .spin {
-      max-width: 450px;
-      width: auto;
-      border-radius: 50%;
-      overflow: hidden;
+      max-width: 530px;
+      width: 100%;
     }
 
     .last {
       align-self: flex-end;
       padding-bottom: 100px;
       max-width: 220px;
+      margin-left: auto;
     }
   }
   
   @media screen and (max-width: $land-767) {
-    padding: 120px 0 50px;
+    padding: 50px 0;
 
     .container {
-      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .item {
-      padding: 0 20px;
-
-      &.images {
-        margin-bottom: 50px;
-        display: flex;
-        justify-content: center;
-      }
+    .last {
+      align-self: flex-end;
+      margin-bottom: 13px;
     }
 
-    .image {
-      max-width: 45%;
+    .center {
+      order: 99;
     }
   }
 

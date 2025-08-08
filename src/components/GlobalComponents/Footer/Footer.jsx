@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation, Trans } from "react-i18next";
+import { useParams } from "react-router-dom";
 import logo from '../../../assets/images/logo.svg';
 import imageD from '../../../assets/images/footerd.webp';
 import imageM from '../../../assets/images/footerm.webp';
@@ -8,6 +9,7 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   const { t } = useTranslation();
   const { hostname } = document.location;
+  const { lang } = useParams();
   
   return (
     <footer className={styles.footer}>
@@ -33,7 +35,7 @@ const Footer = () => {
           </div>
           <div className={styles.itemBlock}>
             <a  
-              // href="/docs/terms.pdf"
+              href={`/${lang}/terms`}
               target="_blank"
               className={styles.navTitle}
               rel="noreferrer"
@@ -41,7 +43,7 @@ const Footer = () => {
               {t('footer.docs.terms')}
             </a>
             <a
-              // href="/docs/.pdf"
+              href={`/${lang}/policy`}
               target="_blank"
               className={styles.navTitle}
               rel="noreferrer"
@@ -49,7 +51,7 @@ const Footer = () => {
               {t('footer.docs.privacy')}
             </a>
             <a  
-              // href="/docs/.pdf"
+              href={`/${lang}/cookie`}
               target="_blank"
               className={styles.navTitle}
               rel="noreferrer"

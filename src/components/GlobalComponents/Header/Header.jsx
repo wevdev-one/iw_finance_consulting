@@ -2,7 +2,6 @@ import _ from 'lodash';
 import React, {useState, useEffect} from 'react';
 import { Link, useLocation, useNavigate} from 'react-router-dom';
 import { useParams } from "react-router-dom";
-import { routes } from "../../../router";
 import Button from '../Button/Button';
 import { useTranslation } from "react-i18next";
 import Dropdown from 'react-dropdown';
@@ -20,11 +19,6 @@ const Header = () => {
   const { lang } = useParams();
   const navigate = useNavigate();
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleSubmenu = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   const setLocale = (lang) => {
     i18n.changeLanguage(lang);
@@ -89,7 +83,7 @@ const Header = () => {
           <div className={styles.bot}>
             <div className={styles.itemBlock}>
               <a  
-                // href="/docs/terms.pdf"
+                href={`/${storedLang}/terms`}
                 target="_blank"
                 className={styles.navTitle}
                 rel="noreferrer"
@@ -97,7 +91,7 @@ const Header = () => {
                 {t('footer.docs.terms')}
               </a>
               <a
-                // href="/docs/.pdf"
+                href={`/${storedLang}/policy`}
                 target="_blank"
                 className={styles.navTitle}
                 rel="noreferrer"
@@ -105,7 +99,7 @@ const Header = () => {
                 {t('footer.docs.privacy')}
               </a>
               <a  
-                // href="/docs/.pdf"
+                href={`/${storedLang}/cookie`}
                 target="_blank"
                 className={styles.navTitle}
                 rel="noreferrer"

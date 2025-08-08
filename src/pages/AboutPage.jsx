@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from '../components/GlobalComponents/Header/Header';
 import Footer from '../components/GlobalComponents/Footer/Footer';
+import WhatWeOffer from '../components/AboutPage/WhatWeOffer/WhatWeOffer';
+import JoinTrust from '../components/AboutPage/JoinTrust/JoinTrust';
 
 function AboutPage() {
   return (
@@ -23,6 +25,8 @@ function AboutPage() {
       </Helmet>
       <div className='padd-page padd-acc'>
         <Header />
+        <WhatWeOffer />
+        <JoinTrust />
         <Footer />
       </div>
     </HelmetProvider>

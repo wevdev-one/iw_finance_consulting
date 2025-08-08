@@ -19,7 +19,7 @@ const JoinUs = () => {
           <div className={styles.center}><img src={image} alt="" className={`${styles.image} ${styles.spin}`} loading="lazy" /></div>
           <div className={styles.last}>
             <div className={`${styles.text} font-16-14`}>{t('main.six.text')}</div>
-            <div className={`${styles.btn} mt-btn`}><Button>{t('btn.openacc')}</Button></div>
+            <div className={`${styles.btn} mt-btn desk_only`}><Button>{t('btn.openacc')}</Button></div>
           </div>
       </div>
     </div>

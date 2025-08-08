@@ -132,6 +132,20 @@ code {
   }
 }
 
+.zoomInMore {
+  animation: zoomIn 0.5s linear;
+}
+
+@keyframes zoomInMore {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
 .zoomOut {
   animation: zoomOut 0.5s linear;
 }

@@ -1,0 +1,133 @@
+@import "../../../styles/variables";
+
+.wrap {
+  position: relative;
+  width: 100%;
+
+  .title {
+    color: #6D8572;
+  }
+
+  .text {
+    font-weight: 300;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .image0 {
+    width: 438px;
+    height: auto;
+    border-radius: 40%;
+    overflow: hidden;
+
+    img {
+      animation: spin 10s linear infinite;
+      transform-origin: center center;
+    }
+  }
+
+  .image1 {
+    width: 350px;
+    height: auto;
+    border-radius: 40%;
+    overflow: hidden;
+
+    img {
+      animation: spin-reverte 10s linear infinite;
+      transform-origin: center center;
+    }
+  }
+
+  .image2 {
+    width: 220px;
+    height: auto;
+    border-radius: 40%;
+    overflow: hidden;
+
+    img {
+      animation: spin 10s linear infinite;
+      transform-origin: center center;
+    }
+  }
+
+  .images {
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: $land-768) {
+    padding: 80px 0;
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      min-height: 500px;
+    }
+
+    .text {
+      margin-top: 15px;
+    }
+
+    .item {
+      max-width: 420px;
+      width: 40%;
+    }
+
+    .images {
+      padding: 15px;
+      max-width: 460px;
+      height: 480px;
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: $land-767) {
+    padding: 50px 0;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .last {
+      align-self: flex-end;
+      margin-bottom: 13px;
+    }
+
+    .center {
+      order: 99;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+    @keyframes spin-reverte {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+}

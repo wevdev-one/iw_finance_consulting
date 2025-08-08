@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from '../components/GlobalComponents/Header/Header';
 import Footer from '../components/GlobalComponents/Footer/Footer';
+import Form from '../components/Form/Form';
 
 function ContactPage() {
   return (
@@ -22,6 +23,7 @@ function ContactPage() {
       </Helmet>
       <div className='padd-page padd-acc'>
         <Header />
+        <Form />
         <Footer />
       </div>
     </HelmetProvider>

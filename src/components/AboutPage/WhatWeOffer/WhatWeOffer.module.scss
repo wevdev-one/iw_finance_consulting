@@ -1,0 +1,82 @@
+@import "../../../styles/variables";
+
+.wrap {
+  position: relative;
+  width: 100%;
+
+  .title {
+    text-align: left;
+  }
+
+  .text {
+    font-weight: 300;
+  }
+
+  .item {
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(205, 215, 202, 0.50) 11.87%, rgba(174, 178, 172, 0.50) 89.46%);
+    padding: 30px 20px 29px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon {
+    position: absolute;
+    right: 20px;
+    width: 28px;
+    height: 28px;
+    transform: rotate(-45deg);
+  }
+
+  @media screen and (min-width: $land-768) {
+    padding: 80px 0;
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+      gap: 35px 40px;
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+    }
+
+    .item {
+      gap: 15px;
+      min-height: 180px;
+    }
+
+    .text {
+      max-width: 315px;
+    }
+
+    .icon {
+      bottom: 30px;
+      right: 40px;
+      width: 42px;
+      height: 42px;
+    }
+  }
+  
+  @media screen and (max-width: $land-767) {
+    padding: 45px 0;
+
+    .title {
+      margin-bottom: 25px;
+    }
+
+    .item {
+      gap: 35px;
+      min-height: 145px;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    .icon {
+      top: 30px;
+    }
+  }
+}

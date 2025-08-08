@@ -8,6 +8,7 @@ import MargList from '../components/HomePage/MargList/MargList';
 import BuiltFor from '../components/HomePage/BuiltFor/BuiltFor';
 import GetStarted from '../components/HomePage/GetStarted/GetStarted';
 import JoinUs from '../components/HomePage/JoinUs/JoinUs';
+import GetInTouch from '../components/HomePage/GetInTouch/GetInTouch';
 
 function HomePage() {
   return (
@@ -35,6 +36,7 @@ function HomePage() {
         <BuiltFor />
         <GetStarted />
         <JoinUs />
+        <GetInTouch />
         <Footer />
       </div>
     </HelmetProvider>
