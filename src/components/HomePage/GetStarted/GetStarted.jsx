@@ -42,6 +42,9 @@ const GetStarted = () => {
               spaceBetween={0}
               slidesPerGroup={1}
               loop={false}
+              pagination={{
+                clickable: true,
+              }}
               // onInit={(e) => { setSwiper(e) }}
               // onSlideChange={(e) => setActive(e.activeIndex)}
             >

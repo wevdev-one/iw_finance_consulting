@@ -36,7 +36,7 @@ function App() {
   }, [isLoading]);
 
   const [pass, setPass] = useState('');
-  const [access, setAccess] = useState(true);
+  const [access, setAccess] = useState(false);
 
   const sendPass = () => {
     fetch('https://whoareyou.devindex.net/', {

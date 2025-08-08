@@ -17,19 +17,21 @@ const JoinTrust = () => {
           <div className={styles.item}>
             <Fade left delay={0}><div className={`${styles.title} font-38-28`}><Trans>{t('about.third.title0')}</Trans></div></Fade>
             <Fade left delay={100}><div className={`${styles.title} font-38-28`}>{t('about.third.title1')}</div></Fade>
-            <div className={`${styles.text} font-16-14`}>{t('about.third.text')}</div>
-            <div className={`${styles.btn} mt-btn desk_only`}><Button>{t('btn.openacc')}</Button></div>
           </div>
-          <div className={styles.images}>
-            <div className={`${styles.centered} ${styles.image0}`}>
-              <img src={image} alt="" className={`${styles.image}`} loading="lazy" />
+            <div className={styles.images}>
+              <div className={`${styles.centered} ${styles.image0}`}>
+                <img src={image} alt="" className={`${styles.image}`} loading="lazy" />
+              </div>
+              <div className={`${styles.centered} ${styles.image1}`}>
+                <img src={image1} alt="" className={`${styles.image}`} loading="lazy" />
+              </div>
+              <div className={`${styles.centered} ${styles.image2}`}>
+                <img src={image2} alt="" className={`${styles.image}`} loading="lazy" />
+              </div>
             </div>
-            <div className={`${styles.centered} ${styles.image1}`}>
-              <img src={image1} alt="" className={`${styles.image}`} loading="lazy" />
-            </div>
-            <div className={`${styles.centered} ${styles.image2}`}>
-              <img src={image2} alt="" className={`${styles.image}`} loading="lazy" />
-            </div>
+          <div className={styles.item}>
+            <div className={`${styles.text} font-16-14`}>{t('about.third.text')}</div>
+            <div className={`${styles.btn} mt-btn`}><Button>{t('btn.openacc')}</Button></div>
           </div>
       </div>
     </div>

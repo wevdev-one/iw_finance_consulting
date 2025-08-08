@@ -20,16 +20,16 @@ const Footer = () => {
           </div>
           <div className={styles.footerNav}>
             <div>
-              <div className={`${styles.itemBlock} ${styles.navTitle}`}>
+              {/* <div className={`${styles.itemBlock} ${styles.navTitle}`}>
                 address
-              </div>
+              </div> */}
               <div className={styles.itemBlock}>
                 <a href={`mailto:support@${hostname}`} className={styles.navTitle}>
                   support@{hostname}
                 </a>
               </div>
               <div className={styles.itemBlock}>
-                <a href="tel:+11111111" className={styles.navTitle}>+1111111</a>
+                <a href="tel:+442038086424" className={styles.navTitle}>+442038086424</a>
               </div>
             </div>
           </div>

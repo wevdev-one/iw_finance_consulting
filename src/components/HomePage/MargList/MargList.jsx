@@ -1,11 +1,29 @@
-import React, { useEffect, useRef } from 'react';
+import { useState, useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import styles from "./MargList.module.scss";
 import { Fade } from 'react-reveal';
 
+import imaged from '../../../assets/images/homepage/line.webp';
+import image from '../../../assets/images/homepage/lined.webp';
+import imagemob from '../../../assets/images/homepage/linem.webp';
+
 const MargList = () => {
   const { t } = useTranslation();
-  const textPathRef = useRef(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  let imageSrc = image;
+  if (windowWidth <= 768) {
+    imageSrc = imagemob;
+  } else if (windowWidth > 1920) {
+    imageSrc = imaged;
+  }
+  
   const list = [
     {
       title: t('main.third.listtitle0'),
@@ -21,24 +39,10 @@ const MargList = () => {
     },
   ];
 
-  useEffect(() => {
-    let offset = 0;
-    const speed = 0.025;
-
-    const animate = () => {
-      if (textPathRef.current) {
-        offset += speed;
-        if (offset > 100) offset = 0;
-        textPathRef.current.setAttribute('startOffset', `${offset}%`);
-      }
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-  }, []);
-
   return (
     <div className={styles.wrap}>
+      <img src={imageSrc} alt='' className={styles.bg} />
+      {/* <div className={styles.bg}></div> */}
       <div className={`${styles.container} container`}>
         <div className={styles.list}>
           {list.map((item, index) => (
@@ -50,39 +54,6 @@ const MargList = () => {
             </Fade>
           ))}
         </div>
-        <div className={styles.marqueeWrapper}>
-          <svg viewBox="0 0 3000 200" className={styles.curvesvg} preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <path
-                id="textPath"
-                d="M 0 100 Q 750 0, 1500 100 T 3000 100"
-                fill="transparent"
-              />
-            </defs>
-
-            {/* background stroke behind text (×2 wider) */}
-            <path
-              d="M 0 100 Q 750 0, 1500 100 T 3000 100"
-              stroke="#f5f5f5"
-              strokeWidth="80"  // <-- збільшено у 2 рази
-              fill="none"
-            />
-
-            <text className={styles.marqueetext} 
-              style={{
-                fill: '#253428',
-                fontSize: '40px',
-                fontWeight: 400,
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-              }}>
-              <textPath href="#textPath" ref={textPathRef}>
-                {'\u2022 Your Crypto \u2022 Your terms '.repeat(50)}
-              </textPath>
-            </text>
-          </svg>
-        </div>
-        {/* <Fade bottom delay={500}><img src={image} alt="" className={styles.image} /></Fade> */}
       </div>
     </div>
   );

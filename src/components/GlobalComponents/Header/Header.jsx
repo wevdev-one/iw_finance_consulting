@@ -29,7 +29,7 @@ const Header = () => {
 
   const languages = [
       { value: 'en', label: 'EN' },
-      { value: 'ru', label: 'RU' },
+      { value: 'nl', label: 'NL' },
   ]
 
   const storedLang = Cookies.get("i18next");
@@ -73,10 +73,41 @@ const Header = () => {
             <Link to={`/${storedLang}/`}>
               <img src={logo} alt="Logo" className={styles.headerLogo} />
             </Link>
-            <div className={styles.itemBlock}>
+
+            <div className={`${styles.itemBlock} ${styles.marl}`}>
               <Link to={`/${storedLang}/about`}>
                 {t('header.about')}
               </Link>
+            </div>
+            <div className='mob_only'>
+              <div className={`${styles.itemBlock}`}>
+              <a  
+                href={`/${storedLang}/terms`}
+                target="_blank"
+                className={styles.navTitle}
+                rel="noreferrer"
+              >
+                {t('footer.docs.terms')}
+              </a>
+              <a
+                href={`/${storedLang}/policy`}
+                target="_blank"
+                className={styles.navTitle}
+                rel="noreferrer"
+              >
+                {t('footer.docs.privacy')}
+              </a>
+              <a  
+                href={`/${storedLang}/cookie`}
+                target="_blank"
+                className={styles.navTitle}
+                rel="noreferrer"
+              >
+                {t('footer.docs.cookie')}
+              </a>
+              </div>
+            </div>
+            <div className={styles.itemBlock}>
               <div className={`${styles.mrl} ${styles.lineItem}`}><Button login header></Button></div>
             </div>
           </div>

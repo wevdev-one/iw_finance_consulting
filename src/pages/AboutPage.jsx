@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from '../components/GlobalComponents/Header/Header';
 import Footer from '../components/GlobalComponents/Footer/Footer';
+import Banner from '../components/AboutPage/Banner/Banner';
 import WhatWeOffer from '../components/AboutPage/WhatWeOffer/WhatWeOffer';
 import JoinTrust from '../components/AboutPage/JoinTrust/JoinTrust';
 
@@ -25,6 +26,7 @@ function AboutPage() {
       </Helmet>
       <div className='padd-page padd-acc'>
         <Header />
+        <Banner />
         <WhatWeOffer />
         <JoinTrust />
         <Footer />

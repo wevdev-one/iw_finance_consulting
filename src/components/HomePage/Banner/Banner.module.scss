@@ -21,7 +21,7 @@
     width: auto;
   }
 
-  @media screen and (min-width: $land-768) {
+  @media screen and (min-width: $land-769) {
     padding: 320px 0 80px;
 
     .container {
@@ -67,7 +67,7 @@
     }
   }
   
-  @media screen and (max-width: $land-767) {
+  @media screen and (max-width: $land-768) {
     padding: 120px 0 50px;
 
     .container {
