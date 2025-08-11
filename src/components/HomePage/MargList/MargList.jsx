@@ -5,7 +5,6 @@ import { Fade } from 'react-reveal';
 
 import imaged from '../../../assets/images/homepage/line.webp';
 import image from '../../../assets/images/homepage/lined.webp';
-import imagemob from '../../../assets/images/homepage/linem.webp';
 
 const MargList = () => {
   const { t } = useTranslation();
@@ -18,9 +17,7 @@ const MargList = () => {
   }, []);
 
   let imageSrc = image;
-  if (windowWidth <= 768) {
-    imageSrc = imagemob;
-  } else if (windowWidth > 1920) {
+  if (windowWidth > 1920) {
     imageSrc = imaged;
   }
   
@@ -41,15 +38,15 @@ const MargList = () => {
 
   return (
     <div className={styles.wrap}>
-      <img src={imageSrc} alt='' className={styles.bg} />
-      {/* <div className={styles.bg}></div> */}
+      <img src={imageSrc} alt='' className={`${styles.bg} desk_only`} />
       <div className={`${styles.container} container`}>
+        <div className={`${styles.sing} mob_only`}>Your Crypto. Your terms.</div>
         <div className={styles.list}>
           {list.map((item, index) => (
             <Fade bottom key={`mlist-${index}`} delay={index * 100 + 1}>
               <div className={styles.item}>
-                <div className={`${styles.title} font-21-16`}><Trans>{item.title}</Trans></div>
-                <div className={`${styles.text} font-16-14`}><Trans>{item.text}</Trans></div>
+                <div className={`${styles.title} font-21`}><Trans>{item.title}</Trans></div>
+                <div className={`${styles.text} font-16`}><Trans>{item.text}</Trans></div>
               </div>
             </Fade>
           ))}

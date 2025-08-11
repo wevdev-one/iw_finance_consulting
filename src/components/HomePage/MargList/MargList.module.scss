@@ -53,7 +53,8 @@
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
-      max-height: 450px;
+      max-height: 500px;
+      object-fit: contain;
     }
 
     .list {
@@ -90,19 +91,25 @@
       height: 50px;
     }
   }
+  
+  @media screen and (min-width: 769px) and (max-width: 1920px) {
+    max-width: 1220px;
+    margin: 0 auto;
+  }
 
   @media screen and (min-width: 1920px) {
     .bg {
       top: 5%;
+      transform: translateX(-40%);
+    }
+
+    .container {
+      min-height: 330px;
     }
   }
   
   @media screen and (max-width: $land-768) {
     padding: 45px 0;
-
-    .container {
-      padding: 0;
-    }
 
     .title {
       text-align: left;
@@ -112,12 +119,16 @@
       grid-template-columns: repeat(1fr);
       gap: 40px;
       margin-top: 20px;
-      padding: 0 20px;
     }
 
     .icon {
       width: 40px;
       height: 40px;
+    }
+
+    .sing {
+      font-size: 28px;
+      margin-bottom: 25px;
     }
   }
 }
