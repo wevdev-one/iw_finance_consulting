@@ -22,8 +22,8 @@ const WhatWeOffer = () => {
       text: t('about.sec.listtext2'),
     },
     {
-      title: t('about.sec.listtitle2'),
-      text: t('about.sec.listtext2'),
+      title: t('about.sec.listtitle3'),
+      text: t('about.sec.listtext3'),
     },
   ]
 
