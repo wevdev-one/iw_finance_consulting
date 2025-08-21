@@ -35,65 +35,12 @@ function App() {
     !isLoading && $('#loader').addClass("hide");
   }, [isLoading]);
 
-  const [pass, setPass] = useState('');
-  const [access, setAccess] = useState(false);
-
-  const sendPass = () => {
-    fetch('https://whoareyou.devindex.net/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ pass }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.result === true && data.token) {
-          const expirationTime = new Date().getTime() + 60 * 60 * 1000;
-          localStorage.setItem('authToken', JSON.stringify({ token: data.token, expires: expirationTime }));
-          setAccess(true);
-        } else {
-          alert('Неверный пароль');
-        }
-      });
-  };
-
-  useEffect(() => {
-    const authData = JSON.parse(localStorage.getItem('authToken'));
-    if (authData) {
-      const currentTime = new Date().getTime();
-      if (authData.expires > currentTime) {
-        setAccess(true);
-      } else {
-        localStorage.removeItem('authToken');
-      }
-    }
-  }, []);
-
   return (
-    <>
-      {!access ?
-        <div style={{ padding: '20px', display: 'flex' }}>
-          <input
-            value={pass}
-            onChange={(e) => setPass(e.target.value)}
-            style={{ padding: '0 10px', border: '1px solid #000' }}
-          />
-          <div
-            onClick={sendPass}
-            style={{ padding: '10px 20px', color: '#fff', background: '#000', cursor: 'pointer' }}
-          >
-            Send
-          </div>
-        </div>
-        :
-        <HelmetProvider>
-          <BrowserRouter>
-            <Router />
-          </BrowserRouter>
-        </HelmetProvider>
-      }
-    </>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 };
 
