@@ -28,8 +28,9 @@ const Header = () => {
   const { t, i18n } = useTranslation();
 
   const languages = [
-      { value: 'en', label: 'EN' },
-      { value: 'nl', label: 'NL' },
+    { value: 'en', label: 'EN' },
+    { value: 'pl', label: 'PL' },
+    { value: 'nl', label: 'NL' },
   ]
 
   const storedLang = Cookies.get("i18next");
